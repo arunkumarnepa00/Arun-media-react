@@ -35,6 +35,7 @@ const Dp = (props) => {
             }
         }
         getDetails();
+        
         return () => mounted = false;
     }, [userId])
 

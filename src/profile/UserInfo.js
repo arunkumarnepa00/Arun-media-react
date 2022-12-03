@@ -4,7 +4,7 @@ import { isAuthenticated } from '../auth/apihelper/authcalls';
 import { getUserDetails, updateUser } from "./apihelper/profilecalls";
 
 const UserInfo = (props) => {
-
+    
     //logged in user and his token
     const { user, token } = isAuthenticated();
     const userId = props.userId;//profile userid
@@ -55,9 +55,12 @@ const UserInfo = (props) => {
                 console.log('user details are updated');
                 const temp1 = await getUserDetails(user._id, token);
                 if(temp1.err){console.log(temp1.err)}
-                else{setDetails(temp1)}
+                else{
+                    setDetails(temp1);
+                    props.afterEditInfo(temp1);
+                }
             }
-            window.location.reload();
+            //window.location.reload();
         } catch (err) {
             console.log(err);
         }

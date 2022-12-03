@@ -13,9 +13,10 @@ const Register = () => {
         relationship:'',
         dob:'',
         error:'',
-        success:false
+        success:false,
+        loading:false
     })
-    const { userName, email, password,from,livesIn,relationship,dob, error, success } = user;
+    const { userName, email, password,from,livesIn,relationship,dob, error, success,loading } = user;
 
     const changeHandler = (event) => {
         const field = event.target.id;
@@ -25,13 +26,13 @@ const Register = () => {
 
     const submitHandler = async () => {
         try {
+            setUser({ ...user, error: false, loading: true })
             const data = await createUser({ userName: userName, email: email, password: password,from:from,livesIn:livesIn,relationship:relationship,dob:dob})
             if (data.err) {
                 setUser({ ...user, error: data.err, success:false})
             }
             else {
-                setUser({ ...user, success:true })
-
+                setUser({ ...user,loading:false, success:true })
             }
 
         } catch (err) {
@@ -65,11 +66,28 @@ const Register = () => {
 
     }
 
+    const laodingHandler = () => {
+
+        return (
+            <>
+              {loading && (
+                <div className="mb-2 p-2  offset-4 col-4  text-center">
+                    <div className="spinner-border text-info" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                    <p>Loading...</p>
+                </div>
+            )}
+            </>
+        )
+    }
+
     return (
         <div className="container bg-light h-100 p-5 m-5">
             <div className="row">
                 {successHandler()}
                 {errorHandler()}
+                {laodingHandler()}
                 <div className="col-6">
                     <div className="p-5">
 

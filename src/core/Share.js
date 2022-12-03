@@ -29,7 +29,7 @@ const Share = (props) => {
         getDetails();
 
         return () => mounted = false;
-    }, [])
+    }, [user])
 
     //form handlers
     const [values, setValues] = useState({

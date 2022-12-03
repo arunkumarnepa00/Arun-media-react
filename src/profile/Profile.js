@@ -32,7 +32,13 @@ const Profile = () => {
     const afterShare=(id)=>{
          setTemp2(id);
     }
- 
+     
+    //refresh dp after update
+    const [temp3,setTemp3]=useState('')
+    const afterEditInfo=(info)=>{
+         setTemp3(info);
+    }
+
     //preloading
     useEffect(() => {
         let mounted = true; 
@@ -49,7 +55,7 @@ const Profile = () => {
         fetchPosts();
 
         return () => mounted = false;
-    }, [param.userId,temp,temp2]
+    }, [param.userId,temp,temp2,temp3]
     )
 
     return (
@@ -86,7 +92,7 @@ const Profile = () => {
                                 {!(user._id === param.userId) ? <UnFollow userId={param.userId} /> : ''}
                             </div>
                             <div className="">
-                                <UserInfo userId={param.userId} />
+                                <UserInfo userId={param.userId} afterEditInfo={afterEditInfo}/>
                             </div>
                             <hr />
                             <div>
