@@ -1,0 +1,16 @@
+.convoList{
+    overflow-y: scroll;
+    position:absolute;
+    height:100%;
+}
+
+::-webkit-scrollbar{
+    width:5px;
+}
+::-webkit-scrollbar-track{
+    background-color:rgb(250, 243, 243);
+}
+::-webkit-scrollbar-thumb{
+    background-color:rgb(153, 153, 153);
+    width:15px;
+}
