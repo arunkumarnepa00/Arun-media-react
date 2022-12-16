@@ -1,12 +1,13 @@
 
-import React, { useEffect, useState } from 'react';
-import { isAuthenticated } from '../auth/apihelper/authcalls';
-import { getUserWithFrnds } from './apihelper/coreCalls';
-import { Buffer } from 'buffer';
-import {useSelector} from 'react-redux';
+import React from "react";
+//import React, { useEffect, useState } from 'react';
+// import { isAuthenticated } from '../auth/apihelper/authcalls';
+// import { getUserWithFrnds } from './apihelper/coreCalls';
+// import { Buffer } from 'buffer';
+// import {useSelector} from 'react-redux';
 
 const Right = ({onlineUsers}) => {
-    const {user,token}=isAuthenticated();
+    //const {user,token}=isAuthenticated();
     // const [userPData,setUserPData]=useState('');
 
     // useEffect(() => {

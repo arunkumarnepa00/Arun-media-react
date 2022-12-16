@@ -22,7 +22,7 @@ const UnFollow = (props) => {
         }
         getDetails();
         return () => mounted = false;
-    }, [userId])
+    }, [userId,user._id, token])
     
     //const f=(details.following && details.following.includes(userId))
 

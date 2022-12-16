@@ -41,9 +41,8 @@ export const signoutUser = async () => {
             method: 'GET'
         })
         const data = await response.json();
-        //console.log(data);
+        console.log(data);
     }
-
 }
 
 

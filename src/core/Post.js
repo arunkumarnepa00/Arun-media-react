@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { isAuthenticated } from '../auth/apihelper/authcalls';
 import { Buffer } from "buffer";
 import { deletePost, likedislike } from './apihelper/coreCalls';

@@ -55,7 +55,7 @@ const Profile = () => {
         fetchPosts();
 
         return () => mounted = false;
-    }, [param.userId,temp,temp2,temp3]
+    }, [param.userId,token,temp,temp2,temp3]
     )
 
     return (
@@ -78,6 +78,15 @@ const Profile = () => {
                             </div>
                             {/*------- display only current user posts ----*/}
                             <div className="px-3">
+                                {
+                                    !posts && (
+                                    <div className="d-flex justify-content-center">
+                                            <div className="spinner-border text-primary" role="status">
+                                            <span className="visually-hidden">Loading...</span>
+                                            </div>
+                                    </div>
+                                    )
+                                }
                                 {posts && posts.map((item) => {
                                     return (
                                         <Post post={item} afterDelete={afterDelete} key={item._id}/>

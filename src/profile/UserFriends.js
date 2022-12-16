@@ -24,7 +24,7 @@ const UserFriends = (props) => {
         getDetails();
 
         return () => mounted = false;
-    }, [userId])
+    }, [userId,token])
 
     return (
         <div className="d-flex flex-wrap">

@@ -27,7 +27,7 @@ const UserInfo = (props) => {
         preload();
 
         return () => mounted = false;
-    }, [userId])
+    }, [userId,token])
 
 
     //setDataToEdit(user);

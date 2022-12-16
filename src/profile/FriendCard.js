@@ -13,7 +13,7 @@ const FriendCard = (props) => {
         <div className="mx-2 my-2 ">
             <Link to={`/profile/${friend._id}`} className='text-decoration-none text-dark text-center'>
                 <img src={img || require('../assets/images/noprofilepic.png')}
-                    width='100px' height='100px' className="shadow" />
+                    width='100px' height='100px' className="shadow" alt='friend'/>
                 <p>{friend.userName}</p>
             </Link>
 

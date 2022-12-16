@@ -42,10 +42,11 @@ const Feed = () => {
             <div className='mt-3'>
                 {
                     !posts && (
-                        <button class="btn btn-primary" type="button" disabled>
-                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            Loading...
-                        </button>
+                      <div className="d-flex justify-content-center">
+                            <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                            </div>
+                      </div>
                     )
                 }
                 {posts && posts.map((item) => {

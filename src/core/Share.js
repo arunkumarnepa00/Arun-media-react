@@ -29,7 +29,7 @@ const Share = (props) => {
         getDetails();
 
         return () => mounted = false;
-    }, [user])
+    }, [user._id,token])
 
     //form handlers
     const [values, setValues] = useState({
@@ -92,7 +92,7 @@ const Share = (props) => {
                     <hr />
                     {postImg && (
                         <div className='mb-4 text-center'>
-                            <img src={URL.createObjectURL(postImg)} width='420px' height='300px' className='' />
+                            <img src={URL.createObjectURL(postImg)} width='420px' height='300px' className='' alt='post'/>
                             <a className='position-absolute text-dark' onClick={()=>{
                                 setValues({...values,postImg:null})
                             }}><i className="fas fa-times-circle"></i></a>

@@ -26,7 +26,7 @@ const Menu = () => {
         }
         getDetails();
         return () => mounted = false;
-    },[]) 
+    },[user._id,token]) 
 
     return (
         <div>
@@ -52,10 +52,9 @@ const Menu = () => {
                                 <Link className="nav-link text-light" to={`/profile/${user._id}`}>Timeline</Link>
                             </li>
                             <li className="nav-item my-2 ms-3">
-                                <a href='#'>
+                                <a href='/'>
                                     <i className="fas fa-bell text-light fs-4"></i>
                                 </a>
-
                             </li>
                             <li className="nav-item my-2 ms-3">
                                 <Link to='/find/friends'>
