@@ -7,8 +7,8 @@ import Profile from "./profile/Profile";
 import PrivateRoutes from './auth/PrivateRoutes';
 import Follow from "./follow/Follow";
 import Followers from "./follow/Followers";
-import Messenger from "./messenger/Messenger";
-import ChatWindows from "./messenger/ChatWindows";
+// import Messenger from "./messenger/Messenger";
+// import ChatWindows from "./messenger/ChatWindows";
 
 
 
@@ -31,12 +31,12 @@ const App = () => {
         <Route path='/followers' element={<PrivateRoutes />}>
           <Route path='' element={<Followers />} />
         </Route>
-        <Route path='/messenger' element={<PrivateRoutes />}>
+        {/* <Route path='/messenger' element={<PrivateRoutes />}>
           <Route path='' element={<Messenger />} />
         </Route>
         <Route path='/chatWindow' element={<PrivateRoutes />}>
           <Route path=':friendId' element={<ChatWindows />} />
-        </Route>
+        </Route> */}
     
       </Routes>
     </Router>
