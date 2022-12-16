@@ -40,6 +40,14 @@ const Feed = () => {
             <Share afterShare={afterShare} />
             </div>
             <div className='mt-3'>
+                {
+                    !posts && (
+                        <button class="btn btn-primary" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
+                    )
+                }
                 {posts && posts.map((item) => {
                         return (   
                             <Post post={item} afterDelete={afterDelete} key={item._id} />
