@@ -93,9 +93,9 @@ const Share = (props) => {
                     {postImg && (
                         <div className='mb-4 text-center'>
                             <img src={URL.createObjectURL(postImg)} width='420px' height='300px' className='' alt='post'/>
-                            <a className='position-absolute text-dark' onClick={()=>{
+                            <button className='position-absolute text-dark border-0 bg-white' onClick={()=>{
                                 setValues({...values,postImg:null})
-                            }}><i className="fas fa-times-circle"></i></a>
+                            }}><i className="fas fa-times-circle"></i></button>
                             <hr />
                         </div>
                     )}

@@ -101,7 +101,7 @@ const Login = () => {
                             </div>
                             <div className="d-grid col-8 mx-auto">
                                 <button className="btn btn-primary" onClick={submitHandler} type="button">Login</button>
-                                <a href='#' className="text-center">Forgot Password?</a>
+                                {/* <a href='#' className="text-center">Forgot Password?</a> */}
                                 <hr />
                                 <Link to='/' className="btn btn-success text-white text-decoration-none">Create New Account</Link>
                             </div>
