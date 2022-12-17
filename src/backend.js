@@ -1,1 +1,1 @@
-export const API='https://arun-media-node-app.onrender.com/api/v1'
+export const API=process.env.REACT_APP_BACKEND

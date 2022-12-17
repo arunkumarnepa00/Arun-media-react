@@ -72,7 +72,7 @@ const Register = () => {
             <>
               {loading && (
                 <div className="mb-2 p-2  offset-4 col-4  text-center">
-                    <div className="spinner-border text-info" role="status">
+                    <div className="spinner-border text-primary" role="status">
                         <span className="sr-only">Loading...</span>
                     </div>
                     <p>Loading...</p>
