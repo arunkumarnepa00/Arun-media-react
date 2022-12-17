@@ -44,9 +44,11 @@ const Follow = () => {
 
                 <div className='col-2'>
                      <div className='mt-4'>
-                         <img src='https://images.pexels.com/photos/1114376/pexels-photo-1114376.jpeg'
+                         <img src={require('../assets/images/ad1.jpeg')}
+                         //src='https://images.pexels.com/photos/1114376/pexels-photo-1114376.jpeg'
                          width='200px' height='200px' className='my-2 p-2' alt='ad1'/>
-                         <img src='https://images.pexels.com/photos/2292953/pexels-photo-2292953.jpeg' 
+                         <img src={require('../assets/images/ad2.jpeg')}
+                         //src='https://images.pexels.com/photos/2292953/pexels-photo-2292953.jpeg' 
                          width='200px' height='200px' className='my-2 p-2' alt='ad2'/>
                      </div>
                 </div>
