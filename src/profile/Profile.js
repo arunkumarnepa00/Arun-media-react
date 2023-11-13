@@ -88,7 +88,7 @@ const Profile = () => {
                     <Dp userId={param.userId} />
                 </div>
                 <div className="mt-5 pt-4">
-                    <div className="mx-4">
+                    <div className="mx-3">
                         <div className="mt-5 pt-4">
                             {!(user._id === param.userId) ? <UnFollow userId={param.userId} /> : ''}
                         </div>
