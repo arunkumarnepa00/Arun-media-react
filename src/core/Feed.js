@@ -33,7 +33,8 @@ const Feed = () => {
         return () => mounted = false;
     }, [temp,temp2])
     // console.log(posts);
-
+    console.log("feedjs refresh");
+    
     return (
         <div className='mx-sm-3'>
             <div className='mt-4'>

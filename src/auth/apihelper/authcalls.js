@@ -1,6 +1,6 @@
 import { API } from '../../backend';
 
-console.log(API);
+// console.log(API);
 
 export const createUser = async (user) => {
     const response = await fetch(`${API}/signup`, {
