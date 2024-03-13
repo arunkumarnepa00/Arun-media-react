@@ -8,6 +8,9 @@ import { Buffer } from 'buffer';
 
 
 const Followers = () => {
+    
+    const [sm,setSM] = useState(false);
+
 
     const { user, token } = isAuthenticated();
     const [details, setDetails] = useState();
@@ -27,6 +30,49 @@ const Followers = () => {
     return (
         <div>
             <Menu />
+
+            {/* mobile view */}
+            <div className='d-inline d-sm-none'>
+                <button className={sm?`d-none`:`btn btn-sm btn-secondary text-white m-2`} onClick={(e)=>{
+                    setSM(true);
+                    }}>MENU
+                </button>
+                <button className={sm?`btn btn-sm`:`d-none`} onClick={(e)=>{
+                    setSM(false);
+                }}>X
+                </button>
+                <div className=''>
+                {
+                    sm && 
+                    <div className=''>
+                        <Left/>
+                    </div>
+                }{
+                !sm &&
+                <div className=''>
+                    <h4 className='m-2'>People Following You</h4>
+                    <div className='my-4 mx-4 d-flex flex-wrap'>
+                        {details && details.followers.map((item) => {
+                            return (
+                                <div key={item._id} className='card p-2  m-2 col-2 text-center' style={{width:'80px'}}>
+                                    <Link to={`/profile/${item._id}`} className='text-decoration-none text-dark'>
+                                        <img src={`data:${item.profilePhoto.contentType};base64,${Buffer.from(item.profilePhoto.data.data).toString('base64')}` || require('../assets/images/noprofilepic.png')}
+                                            width="50" height="50" className="rounded-circle m-auto" alt='' />
+                                        <p>{item.userName}</p>
+                                    </Link>
+                                </div>
+                            )
+                        })
+                        }
+                    </div>
+                </div>
+                }
+                </div>
+            </div>
+
+
+            {/* desktop view */}
+            <div className='d-none d-sm-inline'>
             <div className='row m-auto'>
                 <div className='col-3'>
                     <Left />
@@ -58,6 +104,7 @@ const Followers = () => {
                             width='200px' height='200px' className='my-2 p-2' alt='ad2'/>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     )

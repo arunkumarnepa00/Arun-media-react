@@ -81,9 +81,7 @@ const Menu = () => {
                                 </Link>
                             </li>
                             <li className="nav-item my-2 ms-3 d-none d-sm-inline">
-                                <Link to='/home'
-                                // to={`/messenger`}
-                                >
+                                <Link to='/home'>
                                     <i className="fab fa-facebook-messenger text-light fs-4"></i>
                                 </Link>
                             </li>
